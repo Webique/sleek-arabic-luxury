@@ -78,6 +78,16 @@ const Services: React.FC<ServicesProps> = ({ language }) => {
 
   const serviceList = services[isArabic ? 'ar' : 'en'];
 
+  const openPdfSmart = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, pdfUrl: string) => {
+    const isSmallScreen = typeof window !== 'undefined' && window.innerWidth < 768;
+    const isMobileUA = typeof navigator !== 'undefined' && /Mobi|Android/i.test(navigator.userAgent);
+    const openUrl = isSmallScreen || isMobileUA
+      ? pdfUrl
+      : `/pdf.html?src=${encodeURIComponent(pdfUrl)}`;
+    e.preventDefault();
+    window.open(openUrl, '_blank', 'noopener,noreferrer');
+  };
+
   return (
     <section id="services" className="section-padding">
       <div className="container mx-auto">
@@ -125,10 +135,11 @@ const Services: React.FC<ServicesProps> = ({ language }) => {
         {/* CTA to full services PDF */}
         <div className="text-center mt-12">
           <a
-            href={`/pdf.html?src=${encodeURIComponent(normalServicesPdf)}`}
+            href={normalServicesPdf}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-outline"
+            onClick={(e) => openPdfSmart(e, normalServicesPdf)}
           >
             <span className={isArabic ? 'font-arabic' : ''}>
               {isArabic ? 'عرض جميع الخدمات (PDF)' : 'View All Services (PDF)'}

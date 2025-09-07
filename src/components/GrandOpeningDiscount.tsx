@@ -8,6 +8,16 @@ interface GrandOpeningDiscountProps {
 const GrandOpeningDiscount: React.FC<GrandOpeningDiscountProps> = ({ language }) => {
   const isArabic = language === 'ar';
 
+  const openPdfSmart = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, pdfUrl: string) => {
+    const isSmallScreen = typeof window !== 'undefined' && window.innerWidth < 768;
+    const isMobileUA = typeof navigator !== 'undefined' && /Mobi|Android/i.test(navigator.userAgent);
+    const openUrl = isSmallScreen || isMobileUA
+      ? pdfUrl
+      : `/pdf.html?src=${encodeURIComponent(pdfUrl)}`;
+    e.preventDefault();
+    window.open(openUrl, '_blank', 'noopener,noreferrer');
+  };
+
   return (
     <section id="grand-opening" className="section-padding bg-muted/30">
       <div className="container mx-auto">
@@ -25,10 +35,11 @@ const GrandOpeningDiscount: React.FC<GrandOpeningDiscountProps> = ({ language })
               : 'Explore our special grand opening offers available for a limited time.'}
           </p>
           <a
-            href={`/pdf.html?src=${encodeURIComponent(openingPdf)}`}
+            href={openingPdf}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-outline"
+            onClick={(e) => openPdfSmart(e, openingPdf)}
           >
             <span className={isArabic ? 'font-arabic' : ''}>
               {isArabic ? 'عرض تفاصيل الخصم (PDF)' : 'View Opening Discount (PDF)'}

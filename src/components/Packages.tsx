@@ -36,6 +36,17 @@ const Packages: React.FC<PackagesProps> = ({ language }) => {
     ],
   };
 
+  const openPdfSmart = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, pdfUrl: string) => {
+    // Prefer opening the raw PDF on mobile for better UX; use viewer on larger screens
+    const isSmallScreen = typeof window !== 'undefined' && window.innerWidth < 768;
+    const isMobileUA = typeof navigator !== 'undefined' && /Mobi|Android/i.test(navigator.userAgent);
+    const openUrl = isSmallScreen || isMobileUA
+      ? pdfUrl
+      : `/pdf.html?src=${encodeURIComponent(pdfUrl)}`;
+    e.preventDefault();
+    window.open(openUrl, '_blank', 'noopener,noreferrer');
+  };
+
   return (
     <section id="packages" className="section-padding bg-muted/30">
       <div className="container mx-auto">
@@ -95,10 +106,11 @@ const Packages: React.FC<PackagesProps> = ({ language }) => {
         {/* CTA */}
         <div className="text-center mt-12">
           <a
-            href={`/pdf.html?src=${encodeURIComponent(packagesPdf)}`}
+            href={packagesPdf}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-outline"
+            onClick={(e) => openPdfSmart(e, packagesPdf)}
           >
             <span className={isArabic ? 'font-arabic' : ''}>
               {isArabic ? 'عرض تفاصيل الباقات (PDF)' : 'View Packages Details (PDF)'}
