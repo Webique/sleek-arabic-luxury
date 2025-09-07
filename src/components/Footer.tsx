@@ -1,6 +1,9 @@
 import React from 'react';
 import logo from '../assets/logo.webp';
-import { MessageCircle, Mail, Instagram, Twitter, Video, Camera, MapPin } from 'lucide-react';
+import { MessageCircle, Mail, Instagram, MapPin } from 'lucide-react';
+import { SiTiktok } from 'react-icons/si';
+import { FaXTwitter } from 'react-icons/fa6';
+import { FaSnapchatGhost } from 'react-icons/fa';
 
 interface FooterProps {
   language: string;
@@ -48,9 +51,9 @@ const Footer: React.FC<FooterProps> = ({ language }) => {
 
   const socialLinks = [
     { icon: Instagram, url: 'https://instagram.com/sleekcare.sa', label: 'Instagram' },
-    { icon: Video, url: 'https://tiktok.com/@sleekcare.sa', label: 'TikTok' },
-    { icon: Camera, url: 'https://snapchat.com/add/sleekcare.sa', label: 'Snapchat' },
-    { icon: Twitter, url: 'https://twitter.com/sleekcare_sa', label: 'Twitter' },
+    { icon: SiTiktok, url: 'https://tiktok.com/@sleekcare.sa', label: 'TikTok' },
+    { icon: FaSnapchatGhost, url: 'https://snapchat.com/add/sleekcare.sa', label: 'Snapchat' },
+    { icon: FaXTwitter, url: 'https://twitter.com/sleekcare_sa', label: 'X (Twitter)' },
   ];
 
   return (

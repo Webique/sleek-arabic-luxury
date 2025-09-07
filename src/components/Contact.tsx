@@ -1,5 +1,8 @@
 import React from 'react';
-import { MessageCircle, Mail, Instagram, Twitter, Video, Camera } from 'lucide-react';
+import { MessageCircle, Mail, Instagram } from 'lucide-react';
+import { SiTiktok } from 'react-icons/si';
+import { FaXTwitter } from 'react-icons/fa6';
+import { FaSnapchatGhost } from 'react-icons/fa';
 
 interface ContactProps {
   language: string;
@@ -29,9 +32,9 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
 
   const socialLinks = [
     { name: 'Instagram', handle: 'Sleekcare.sa', url: 'https://instagram.com/sleekcare.sa', icon: Instagram },
-    { name: 'TikTok', handle: 'Sleekcare.sa', url: 'https://tiktok.com/@sleekcare.sa', icon: Video },
-    { name: 'Snapchat', handle: 'Sleekcare.sa', url: 'https://snapchat.com/add/sleekcare.sa', icon: Camera },
-    { name: 'X (Twitter)', handle: 'Sleekcare_sa', url: 'https://twitter.com/sleekcare_sa', icon: Twitter },
+    { name: 'TikTok', handle: 'Sleekcare.sa', url: 'https://tiktok.com/@sleekcare.sa', icon: SiTiktok },
+    { name: 'Snapchat', handle: 'Sleekcare.sa', url: 'https://snapchat.com/add/sleekcare.sa', icon: FaSnapchatGhost },
+    { name: 'X (Twitter)', handle: 'Sleekcare_sa', url: 'https://twitter.com/sleekcare_sa', icon: FaXTwitter },
   ];
 
   return (
