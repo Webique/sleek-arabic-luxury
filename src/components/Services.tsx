@@ -45,17 +45,17 @@ const Services: React.FC<ServicesProps> = ({ language }) => {
     ar: [
       {
         icon: Scissors,
-        title: 'قص وقصّات عصرية',
+        title: 'قصّات عصرية',
         description: 'قصات مخصصة وفيدات عصرية تناسب ملامحك.',
       },
       {
         icon: Zap,
-        title: 'تصميم اللحية والحلاقة التقليدية',
+        title: 'قص وتحديد اللحية',
         description: 'تحديد دقيق وحلاقة بالمنشفة الساخنة وتفاصيل احترافية.',
       },
       {
         icon: Palette,
-        title: 'تلوين وكيراتين',
+        title: 'صبغة وكيراتين',
         description: 'تمويه الشيب وتون خفيف وكيراتين لتنعيم الشعر.',
       },
       {
@@ -66,12 +66,12 @@ const Services: React.FC<ServicesProps> = ({ language }) => {
       {
         icon: Hand,
         title: 'عناية اليدين والأظافر',
-        description: 'عناية راقية لليدين وترتيب الأظافر بلمسة مغذية.',
+        description: 'عناية راقية لليدين وترتيب الأظافر بلمسة إحترافية.',
       },
       {
         icon: Plus,
         title: 'إضافات',
-        description: 'ترتيب الأنف والأذن، خيط، مساج فروة الرأس.',
+        description: 'تهذيب الأنف والأذن، خيط، مساج فروة الرأس.',
       },
     ],
   };
