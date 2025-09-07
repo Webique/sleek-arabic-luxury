@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import aboutImage from '../assets/about.webp';
 
 interface AboutProps {
@@ -24,8 +24,6 @@ const About: React.FC<AboutProps> = ({ language }) => {
   };
 
   const { title, subtitle, description, hashtag } = content[isArabic ? 'ar' : 'en'];
-
-  const [imageLoaded, setImageLoaded] = useState(false);
 
   return (
     <section id="about" className="section-padding bg-muted/30">
@@ -55,20 +53,14 @@ const About: React.FC<AboutProps> = ({ language }) => {
 
           {/* Image */}
           <div className={`${isArabic ? 'lg:col-start-1' : 'lg:col-start-2'}`}>
-            <div className="luxury-card overflow-hidden relative">
-              <div
-                className={`absolute inset-0 bg-muted ${imageLoaded ? 'opacity-0' : 'opacity-100'} transition-opacity duration-500 animate-pulse`}
-                aria-hidden="true"
-              />
+            <div className="luxury-card overflow-hidden">
               <img
                 src={aboutImage}
                 alt="Sleek Care Professional Setup"
-                className={`w-full h-96 object-cover transition-opacity duration-500 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
+                className="w-full h-96 object-cover"
                 loading="lazy"
                 decoding="async"
-                fetchPriority="low"
                 sizes="(max-width: 1024px) 100vw, 50vw"
-                onLoad={() => setImageLoaded(true)}
               />
             </div>
           </div>
