@@ -1,5 +1,6 @@
 import React from 'react';
 import { Scissors, Zap, Palette, Sparkles, Hand, Plus } from 'lucide-react';
+import normalServicesPdf from '../assets/NormalServices.pdf';
 
 interface ServicesProps {
   language: string;
@@ -81,7 +82,7 @@ const Services: React.FC<ServicesProps> = ({ language }) => {
     <section id="services" className="section-padding">
       <div className="container mx-auto">
         {/* Section Header */}
-        <div className={`text-center mb-16 ${isArabic ? 'text-right' : 'text-left'}`}>
+        <div className={`text-center mb-16`}>
           <h2 className={`heading-lg text-primary mb-4 ${isArabic ? 'font-arabic' : 'font-display'}`}>
             {isArabic ? 'خدماتنا' : 'Our Services'}
           </h2>
@@ -120,6 +121,19 @@ const Services: React.FC<ServicesProps> = ({ language }) => {
               </div>
             );
           })}
+        </div>
+        {/* CTA to full services PDF */}
+        <div className="text-center mt-12">
+          <a
+            href={`/pdf.html?src=${encodeURIComponent(normalServicesPdf)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-outline"
+          >
+            <span className={isArabic ? 'font-arabic' : ''}>
+              {isArabic ? 'عرض جميع الخدمات (PDF)' : 'View All Services (PDF)'}
+            </span>
+          </a>
         </div>
       </div>
     </section>

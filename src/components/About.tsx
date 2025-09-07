@@ -1,5 +1,5 @@
 import React from 'react';
-import aboutImage from '../assets/about-sleek-care.jpg';
+import aboutImage from '../assets/about.webp';
 
 interface AboutProps {
   language: string;

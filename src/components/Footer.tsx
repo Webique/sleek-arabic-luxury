@@ -1,4 +1,5 @@
 import React from 'react';
+import logo from '../assets/logo.webp';
 import { MessageCircle, Mail, Instagram, Twitter, Video, Camera, MapPin } from 'lucide-react';
 
 interface FooterProps {
@@ -59,7 +60,7 @@ const Footer: React.FC<FooterProps> = ({ language }) => {
           {/* Brand Column */}
           <div className={`space-y-6 ${isArabic ? 'text-right' : 'text-left'}`}>
             <div>
-              <div className="font-display text-2xl font-bold mb-4">Sleek Care</div>
+              <img src={logo} alt="Sleek Care logo" className="h-10 w-auto mb-4" />
               <p className={`text-primary-foreground/80 leading-relaxed ${isArabic ? 'font-arabic' : ''}`}>
                 {tagline}
               </p>

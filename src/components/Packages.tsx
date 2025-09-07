@@ -1,5 +1,6 @@
 import React from 'react';
 import { Check } from 'lucide-react';
+import packagesPdf from '../assets/packages.pdf';
 
 interface PackagesProps {
   language: string;
@@ -11,22 +12,26 @@ const Packages: React.FC<PackagesProps> = ({ language }) => {
   const packages = {
     en: [
       {
-        title: 'Executive Refresh',
-        arabicTitle: 'باقة الإنعاش التنفيذي',
-        description: 'Haircut + beard design + hot-towel finish.',
-        arabicDescription: 'قص شعر + تصميم لحية + لمسة منشفة ساخنة.',
+        title: 'Grooms Package',
+        arabicTitle: 'ﺑﺎﻗــﺔ اﻟـﻌـﺮﻳـــــــﺲ',
+        description:
+          'Haircut & Beard Trim + Facial Treatment + Manicure & Pedicure + Hair & Beard Dye + Blow Dry + Beard Serum + Hair Care with Hot Oil Treatment & Steam',
+        arabicDescription:
+          'قص شعر وتهذيب لحية + تنظيف وعلاج للوجه + مانيكير وباديكير + صبغة للشعر واللحية + تجفيف بالسشوار + سيروم للحية + عناية بالشعر بزيوت حارة مع بخار',
       },
       {
-        title: 'Sleek Signature',
-        arabicTitle: 'الباقة المميّزة',
-        description: 'Haircut + facial cleanse + scalp massage.',
-        arabicDescription: 'قص شعر + تنظيف وجه + مساج فروة الرأس.',
+        title: 'Sleek Birthday Package',
+        arabicTitle: 'ﺑﺎﻗــﺔ ﺳﻠﻴﻜﺮ ﻳﻮم اﻟﻤﻴﻼد',
+        description:
+          'Haircut & Beard Trim + Facial Treatment + Hair Care + Pedicure + Blow Dry',
+        arabicDescription:
+          'قص شعر وتهذيب لحية + تنظيف وعلاج للوجه + عناية بالشعر + باديكير + تجفيف بالسشوار',
       },
       {
-        title: 'Keratin Upgrade',
-        arabicTitle: 'ترقية الكيراتين',
-        description: 'Cut + keratin smoothing + home care tips.',
-        arabicDescription: 'قص شعر + كيراتين + إرشادات عناية منزلية.',
+        title: 'Sleek Kids Package',
+        arabicTitle: 'ﺑﺎﻗــﺔ ﺳﻠﻴﻜﺮ ﻟﻸﻃﻔﺎل',
+        description: 'Haircut + Hair Wash + Blow Dry + Hair Powder Wax',
+        arabicDescription: 'قص شعر + غسيل شعر + تجفيف بالسشوار + واكس بودرة للشعر',
       },
     ],
   };
@@ -35,9 +40,9 @@ const Packages: React.FC<PackagesProps> = ({ language }) => {
     <section id="packages" className="section-padding bg-muted/30">
       <div className="container mx-auto">
         {/* Section Header */}
-        <div className={`text-center mb-16 ${isArabic ? 'text-right' : 'text-left'}`}>
+        <div className={`text-center mb-16`}>
           <h2 className={`heading-lg text-primary mb-4 ${isArabic ? 'font-arabic' : 'font-display'}`}>
-            {isArabic ? 'باقاتنا المميزة' : 'Our Packages'}
+            {isArabic ? 'ﺑﺎﻗﺎت اﻟﺴﻠﻴﻜﺮ' : 'Sleek Packages'}
           </h2>
           <div className="w-16 h-1 bg-gradient-gold rounded-full mx-auto mb-6" />
           <p className={`body-lg text-muted-foreground max-w-2xl mx-auto ${isArabic ? 'font-arabic' : ''}`}>
@@ -90,13 +95,13 @@ const Packages: React.FC<PackagesProps> = ({ language }) => {
         {/* CTA */}
         <div className="text-center mt-12">
           <a
-            href="https://wa.me/966566667197"
+            href={`/pdf.html?src=${encodeURIComponent(packagesPdf)}`}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-outline"
           >
             <span className={isArabic ? 'font-arabic' : ''}>
-              {isArabic ? 'استفسر عن الأسعار' : 'Inquire About Pricing'}
+              {isArabic ? 'عرض تفاصيل الباقات (PDF)' : 'View Packages Details (PDF)'}
             </span>
           </a>
         </div>

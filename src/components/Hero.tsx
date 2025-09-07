@@ -27,7 +27,7 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
   const { slogan, subline, cta, badges } = content[isArabic ? 'ar' : 'en'];
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center">
+    <section id="home" className="relative min-h-screen flex items-center justify-center">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img
@@ -35,12 +35,13 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
           alt="Sleek Care Barbershop"
           className="w-full h-full object-cover"
         />
+        <div className="absolute inset-0 bg-black/40" />
         <div className="absolute inset-0 hero-gradient" />
       </div>
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4">
-        <div className={`max-w-4xl ${isArabic ? 'mr-auto text-right' : 'ml-auto text-left'}`}>
+        <div className={`max-w-4xl mx-auto text-center`}>
           <div className="space-y-8">
             {/* Arabic Slogan */}
             {isArabic && (
@@ -57,25 +58,25 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
             )}
 
             {/* Subline */}
-            <p className={`body-lg text-white/90 max-w-2xl ${isArabic ? 'font-arabic' : ''}`}>
+            <p className={`body-lg text-white/90 max-w-2xl mx-auto ${isArabic ? 'font-arabic' : ''}`}>
               {subline}
             </p>
 
             {/* CTA Button */}
-            <div className="pt-4">
+            <div className="pt-4 flex justify-center">
               <a
                 href="https://wa.me/966566667197"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-gold text-lg px-10 py-5 inline-flex items-center gap-3 shadow-luxury"
+                className="btn-gold text-base px-8 py-4 inline-flex items-center gap-2.5 shadow-luxury"
               >
-                <MessageCircle size={20} />
+                <MessageCircle size={18} />
                 <span className={isArabic ? 'font-arabic' : ''}>{cta}</span>
               </a>
             </div>
 
             {/* Micro Badges */}
-            <div className={`flex flex-wrap gap-6 pt-8 ${isArabic ? 'justify-end' : 'justify-start'}`}>
+            <div className={`flex flex-wrap gap-6 pt-8 justify-center`}>
               {badges.map((badge, index) => {
                 const icons = [Shield, Award, Sparkles];
                 const Icon = icons[index];

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="icon" type="image/webp" href="/logo.webp" />
+    <style>
+      html, body { height: 100%; margin: 0; }
+      iframe { width: 100%; height: 100%; border: 0; }
+      .fallback { display: flex; height: 100%; align-items: center; justify-content: center; font-family: sans-serif; }
+    </style>
+  </head>
+  <body>
+    <div id="app" class="fallback">Loading…</div>
+    <script>
+      (function () {
+        const params = new URLSearchParams(window.location.search);
+        const src = params.get('src');
+        if (!src) {
+          document.getElementById('app').textContent = 'No document specified.';
+          return;
+        }
+        const iframe = document.createElement('iframe');
+        iframe.src = src;
+        const app = document.getElementById('app');
+        app.parentNode.replaceChild(iframe, app);
+      })();
+    </script>
+  </body>
+  </html>
+
+

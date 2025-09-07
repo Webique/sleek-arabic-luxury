@@ -35,7 +35,7 @@ const Location: React.FC<LocationProps> = ({ language }) => {
     <section id="location" className="section-padding">
       <div className="container mx-auto">
         {/* Section Header */}
-        <div className={`text-center mb-16 ${isArabic ? 'text-right' : 'text-left'}`}>
+        <div className={`text-center mb-16`}>
           <h2 className={`heading-lg text-primary mb-4 ${isArabic ? 'font-arabic' : 'font-display'}`}>
             {title}
           </h2>
