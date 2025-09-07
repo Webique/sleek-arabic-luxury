@@ -105,17 +105,17 @@ const Footer: React.FC<FooterProps> = ({ language }) => {
                 href="https://wa.me/966566667197"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`flex items-center gap-3 text-primary-foreground/80 hover:text-gold transition-colors duration-300 ${isArabic ? 'flex-row-reverse' : ''}`}
+                className="flex items-center gap-3 text-primary-foreground/80 hover:text-gold transition-colors duration-300"
               >
                 <MessageCircle size={16} />
-                <span>+966 566667197</span>
+                <span dir="ltr" style={{ direction: 'ltr', textAlign: 'left' }}>+966 566667197</span>
               </a>
               <a
                 href="mailto:sleekcare.sa@gmail.com"
-                className={`flex items-center gap-3 text-primary-foreground/80 hover:text-gold transition-colors duration-300 ${isArabic ? 'flex-row-reverse' : ''}`}
+                className="flex items-center gap-3 text-primary-foreground/80 hover:text-gold transition-colors duration-300"
               >
                 <Mail size={16} />
-                <span>sleekcare.sa@gmail.com</span>
+                <span dir="ltr" style={{ direction: 'ltr', textAlign: 'left' }}>sleekcare.sa@gmail.com</span>
               </a>
             </div>
 

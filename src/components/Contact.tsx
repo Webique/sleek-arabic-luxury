@@ -62,7 +62,7 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
             <h3 className={`heading-md text-primary mb-4 ${isArabic ? 'font-arabic' : ''}`}>
               {phone}
             </h3>
-            <p className="text-muted-foreground mb-6">+966 566667197</p>
+            <p className="text-muted-foreground mb-6" dir="ltr" style={{ direction: 'ltr', textAlign: 'center' }}>+966 566667197</p>
             <a
               href="https://wa.me/966566667197"
               target="_blank"
