@@ -9,13 +9,8 @@ const GrandOpeningDiscount: React.FC<GrandOpeningDiscountProps> = ({ language })
   const isArabic = language === 'ar';
 
   const openPdfSmart = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, pdfUrl: string) => {
-    const isSmallScreen = typeof window !== 'undefined' && window.innerWidth < 768;
-    const isMobileUA = typeof navigator !== 'undefined' && /Mobi|Android/i.test(navigator.userAgent);
-    const openUrl = isSmallScreen || isMobileUA
-      ? pdfUrl
-      : `/pdf.html?src=${encodeURIComponent(pdfUrl)}`;
     e.preventDefault();
-    window.open(openUrl, '_blank', 'noopener,noreferrer');
+    window.open(pdfUrl, '_blank', 'noopener,noreferrer');
   };
 
   return (

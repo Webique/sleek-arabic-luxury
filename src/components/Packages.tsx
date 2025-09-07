@@ -37,14 +37,9 @@ const Packages: React.FC<PackagesProps> = ({ language }) => {
   };
 
   const openPdfSmart = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, pdfUrl: string) => {
-    // Prefer opening the raw PDF on mobile for better UX; use viewer on larger screens
-    const isSmallScreen = typeof window !== 'undefined' && window.innerWidth < 768;
-    const isMobileUA = typeof navigator !== 'undefined' && /Mobi|Android/i.test(navigator.userAgent);
-    const openUrl = isSmallScreen || isMobileUA
-      ? pdfUrl
-      : `/pdf.html?src=${encodeURIComponent(pdfUrl)}`;
+    // Open raw PDF directly (favicon now set globally via /favicon.ico)
     e.preventDefault();
-    window.open(openUrl, '_blank', 'noopener,noreferrer');
+    window.open(pdfUrl, '_blank', 'noopener,noreferrer');
   };
 
   return (

@@ -58,6 +58,9 @@ const About: React.FC<AboutProps> = ({ language }) => {
                 src={aboutImage}
                 alt="Sleek Care Professional Setup"
                 className="w-full h-96 object-cover"
+                loading="lazy"
+                decoding="async"
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
           </div>

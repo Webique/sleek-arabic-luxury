@@ -6,9 +6,9 @@
     <title>Document</title>
     <link rel="icon" type="image/webp" href="/logo.webp" />
     <style>
-      html, body { height: 100%; margin: 0; }
-      iframe { width: 100%; height: 100%; border: 0; }
-      .fallback { display: flex; height: 100%; align-items: center; justify-content: center; font-family: sans-serif; }
+      html, body { height: 100%; margin: 0; background: #0b0b0b; }
+      iframe { width: 100%; height: 100%; border: 0; background: #0b0b0b; }
+      .fallback { display: flex; height: 100%; align-items: center; justify-content: center; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; color: #eaeaea; }
     </style>
   </head>
   <body>
@@ -23,6 +23,8 @@
         }
         const iframe = document.createElement('iframe');
         iframe.src = src;
+        iframe.setAttribute('title', 'Document');
+        iframe.setAttribute('loading', 'eager');
         const app = document.getElementById('app');
         app.parentNode.replaceChild(iframe, app);
       })();

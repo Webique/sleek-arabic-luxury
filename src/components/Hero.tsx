@@ -34,6 +34,10 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
           src={heroImage}
           alt="Sleek Care Barbershop"
           className="w-full h-full object-cover"
+          loading="eager"
+          decoding="async"
+          fetchpriority="high"
+          sizes="100vw"
         />
         <div className="absolute inset-0 bg-black/40" />
         <div className="absolute inset-0 hero-gradient" />
