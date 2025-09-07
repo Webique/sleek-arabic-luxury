@@ -106,11 +106,11 @@ const Packages: React.FC<PackagesProps> = ({ language }) => {
         {/* CTA */}
         <div className="text-center mt-12">
           <a
-            href={packagesPdf}
+            href={'/packages.pdf'}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-outline"
-            onClick={(e) => openPdfSmart(e, packagesPdf)}
+            onClick={(e) => openPdfSmart(e, '/packages.pdf')}
           >
             <span className={isArabic ? 'font-arabic' : ''}>
               {isArabic ? 'عرض تفاصيل الباقات (PDF)' : 'View Packages Details (PDF)'}

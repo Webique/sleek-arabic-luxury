@@ -35,11 +35,11 @@ const GrandOpeningDiscount: React.FC<GrandOpeningDiscountProps> = ({ language })
               : 'Explore our special grand opening offers available for a limited time.'}
           </p>
           <a
-            href={openingPdf}
+            href={'/OpeningDiscount.pdf'}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-outline"
-            onClick={(e) => openPdfSmart(e, openingPdf)}
+            onClick={(e) => openPdfSmart(e, '/OpeningDiscount.pdf')}
           >
             <span className={isArabic ? 'font-arabic' : ''}>
               {isArabic ? 'عرض تفاصيل الخصم (PDF)' : 'View Opening Discount (PDF)'}

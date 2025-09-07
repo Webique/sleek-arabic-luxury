@@ -135,11 +135,11 @@ const Services: React.FC<ServicesProps> = ({ language }) => {
         {/* CTA to full services PDF */}
         <div className="text-center mt-12">
           <a
-            href={normalServicesPdf}
+            href={'/NormalServices.pdf'}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-outline"
-            onClick={(e) => openPdfSmart(e, normalServicesPdf)}
+            onClick={(e) => openPdfSmart(e, '/NormalServices.pdf')}
           >
             <span className={isArabic ? 'font-arabic' : ''}>
               {isArabic ? 'عرض جميع الخدمات (PDF)' : 'View All Services (PDF)'}
