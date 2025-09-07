@@ -47,16 +47,27 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        sidebar: {
-          DEFAULT: "hsl(var(--sidebar-background))",
-          foreground: "hsl(var(--sidebar-foreground))",
-          primary: "hsl(var(--sidebar-primary))",
-          "primary-foreground": "hsl(var(--sidebar-primary-foreground))",
-          accent: "hsl(var(--sidebar-accent))",
-          "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
-          border: "hsl(var(--sidebar-border))",
-          ring: "hsl(var(--sidebar-ring))",
-        },
+        // Sleek Care luxury palette
+        gold: "hsl(var(--gold))",
+        "gold-light": "hsl(var(--gold-light))",
+        "steel-blue": "hsl(var(--steel-blue))",
+        slate: "hsl(var(--slate))",
+        "vintage-gold": "hsl(var(--vintage-gold))",
+        "warm-sand": "hsl(var(--warm-sand))",
+      },
+      fontFamily: {
+        display: ["var(--font-display)", "serif"],
+        arabic: ["var(--font-arabic)", "sans-serif"],
+        body: ["var(--font-body)", "sans-serif"],
+        sans: ["var(--font-body)", "sans-serif"],
+      },
+      boxShadow: {
+        luxury: "var(--shadow-luxury)",
+        card: "var(--shadow-card)",
+      },
+      backgroundImage: {
+        "gradient-hero": "var(--gradient-hero)",
+        "gradient-gold": "var(--gradient-gold)",
       },
       borderRadius: {
         lg: "var(--radius)",
