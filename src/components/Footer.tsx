@@ -61,14 +61,14 @@ const Footer: React.FC<FooterProps> = ({ language }) => {
       <div className="container mx-auto px-4 py-16">
         <div className="grid md:grid-cols-3 gap-12">
           {/* Brand Column */}
-          <div className={`space-y-6 ${isArabic ? 'text-right' : 'text-left'}`}>
+          <div className={`space-y-6 text-center ${isArabic ? 'md:text-right' : 'md:text-left'}`}>
             <div>
-              <img src={logo} alt="Sleek Care logo" className="h-10 w-auto mb-4" />
+              <img src={logo} alt="Sleek Care logo" className="h-10 w-auto mb-4 mx-auto" />
               <p className={`text-primary-foreground/80 leading-relaxed ${isArabic ? 'font-arabic' : ''}`}>
                 {tagline}
               </p>
             </div>
-            <div className={`flex items-center gap-2 ${isArabic ? 'flex-row-reverse' : ''}`}>
+            <div className={`flex items-center gap-2 justify-center ${isArabic ? 'md:flex-row-reverse' : ''}`}>
               <MapPin size={16} className="text-gold" />
               <span className={`text-sm ${isArabic ? 'font-arabic' : ''}`}>
                 {isArabic ? 'الرياض، المملكة العربية السعودية' : 'Riyadh, Saudi Arabia'}
@@ -77,7 +77,7 @@ const Footer: React.FC<FooterProps> = ({ language }) => {
           </div>
 
           {/* Quick Links */}
-          <div className={`space-y-6 ${isArabic ? 'text-right' : 'text-left'}`}>
+          <div className={`space-y-6 text-center ${isArabic ? 'md:text-right' : 'md:text-left'}`}>
             <h3 className={`font-semibold text-lg ${isArabic ? 'font-arabic' : ''}`}>
               {quickLinks}
             </h3>
@@ -96,7 +96,7 @@ const Footer: React.FC<FooterProps> = ({ language }) => {
           </div>
 
           {/* Contact & Social */}
-          <div className={`space-y-6 ${isArabic ? 'text-right' : 'text-left'}`}>
+          <div className={`space-y-6 text-center ${isArabic ? 'md:text-right' : 'md:text-left'}`}>
             <h3 className={`font-semibold text-lg ${isArabic ? 'font-arabic' : ''}`}>
               {contact}
             </h3>
@@ -105,14 +105,14 @@ const Footer: React.FC<FooterProps> = ({ language }) => {
                 href="https://wa.me/966566667197"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 text-primary-foreground/80 hover:text-gold transition-colors duration-300"
+                className="flex items-center justify-center gap-3 text-primary-foreground/80 hover:text-gold transition-colors duration-300"
               >
                 <MessageCircle size={16} />
                 <span dir="ltr" style={{ direction: 'ltr', textAlign: 'left' }}>+966 566667197</span>
               </a>
               <a
                 href="mailto:sleekcare.sa@gmail.com"
-                className="flex items-center gap-3 text-primary-foreground/80 hover:text-gold transition-colors duration-300"
+                className="flex items-center justify-center gap-3 text-primary-foreground/80 hover:text-gold transition-colors duration-300"
               >
                 <Mail size={16} />
                 <span dir="ltr" style={{ direction: 'ltr', textAlign: 'left' }}>sleekcare.sa@gmail.com</span>
@@ -120,7 +120,7 @@ const Footer: React.FC<FooterProps> = ({ language }) => {
             </div>
 
             {/* Social Icons */}
-            <div className={`flex gap-4 ${isArabic ? 'justify-end' : 'justify-start'}`}>
+            <div className={`flex gap-4 justify-center ${isArabic ? 'md:justify-end' : 'md:justify-start'}`}>
               {socialLinks.map((social, index) => {
                 const Icon = social.icon;
                 return (
@@ -141,11 +141,11 @@ const Footer: React.FC<FooterProps> = ({ language }) => {
         </div>
 
         {/* Bottom Bar */}
-        <div className={`border-t border-primary-foreground/20 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 ${isArabic ? 'md:flex-row-reverse' : ''}`}>
-          <div className={`text-primary-foreground/60 text-sm ${isArabic ? 'font-arabic' : ''}`}>
+        <div className={`border-t border-primary-foreground/20 mt-12 pt-8 flex flex-col md:flex-row items-center gap-4 justify-center md:justify-between ${isArabic ? 'md:flex-row-reverse' : ''}`}>
+          <div className={`text-primary-foreground/60 text-sm text-center ${isArabic ? 'font-arabic md:text-right' : 'md:text-left'}`}>
             © {new Date().getFullYear()} {copyright}
           </div>
-          <div className={`flex gap-6 ${isArabic ? 'flex-row-reverse' : ''}`}>
+          <div className={`flex gap-6 justify-center md:justify-start ${isArabic ? 'md:flex-row-reverse' : ''}`}>
             <a href="#" className={`text-primary-foreground/60 hover:text-gold transition-colors text-sm ${isArabic ? 'font-arabic' : ''}`}>
               {privacy}
             </a>
