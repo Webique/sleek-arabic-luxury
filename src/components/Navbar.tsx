@@ -32,6 +32,8 @@ const Navbar: React.FC<NavbarProps> = ({ language, onLanguageToggle }) => {
   };
 
   const links = navLinks[isArabic ? 'ar' : 'en'];
+  // Desktop should show RTL order when Arabic; mobile keeps natural vertical order
+  const displayedLinksDesktop = isArabic ? [...links].reverse() : links;
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
@@ -43,8 +45,8 @@ const Navbar: React.FC<NavbarProps> = ({ language, onLanguageToggle }) => {
           </div>
 
           {/* Navigation Links (centered) */}
-          <div className="hidden md:flex items-center gap-8 absolute inset-y-0 left-1/2 -translate-x-1/2">
-            {links.map((link) => (
+          <div className={`hidden md:flex items-center gap-8 absolute inset-y-0 left-1/2 -translate-x-1/2`}>
+            {displayedLinksDesktop.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
@@ -84,18 +86,19 @@ const Navbar: React.FC<NavbarProps> = ({ language, onLanguageToggle }) => {
           className={`md:hidden absolute left-0 right-0 top-16 z-40 transition-all duration-300 ease-out ${
             isMobileOpen ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 -translate-y-2 pointer-events-none'
           }`}
+          dir="ltr"
         >
           <div className={`mx-4 rounded-2xl border border-border/60 bg-background/95 backdrop-blur shadow-xl transition-transform duration-300 ${
             isMobileOpen ? 'scale-100' : 'scale-95'
           }`}>
-            <div className={`py-3 ${isArabic ? 'text-right' : 'text-left'}`}>
-              <div className={`flex flex-col ${isArabic ? 'items-end' : 'items-start'}`}>
+            <div className="py-3 text-center">
+              <div className="space-y-0">
                 {links.map((link) => (
                   <a
                     key={link.href}
                     href={link.href}
                     onClick={() => setIsMobileOpen(false)}
-                    className={`w-full px-4 py-3 text-foreground hover:text-primary transition-colors duration-300 text-base ${
+                    className={`block w-full px-4 py-3 text-foreground hover:text-primary transition-colors duration-300 text-base border-b border-border/20 last:border-b-0 text-center ${
                       isArabic ? 'font-arabic' : ''
                     }`}
                   >
