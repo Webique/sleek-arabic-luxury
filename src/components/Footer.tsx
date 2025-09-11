@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../assets/logo.webp';
+import logo2 from '../assets/logo2.png';
 import { MessageCircle, Mail, Instagram, MapPin } from 'lucide-react';
 import { SiTiktok } from 'react-icons/si';
 import { FaXTwitter } from 'react-icons/fa6';
@@ -63,14 +63,14 @@ const Footer: React.FC<FooterProps> = ({ language }) => {
           {/* Brand Column */}
           <div className={`space-y-6 text-center ${isArabic ? 'md:text-right' : 'md:text-left'}`}>
             <div>
-              <img src={logo} alt="Sleek Care logo" className="h-10 w-auto mb-4 mx-auto" />
-              <p className={`text-primary-foreground/80 leading-relaxed ${isArabic ? 'font-arabic' : ''}`}>
+              <img src={logo2} alt="Sleek Care logo" className={`h-32 md:h-36 lg:h-40 w-auto mb-4 mx-auto ${isArabic ? 'md:ml-auto md:mr-0' : 'md:mr-auto md:ml-0'}`} />
+              <p className={`text-primary-foreground/80 leading-relaxed ${isArabic ? 'font-arabic md:text-right' : 'md:text-left'}`}>
                 {tagline}
               </p>
             </div>
-            <div className={`flex items-center gap-2 justify-center ${isArabic ? 'md:flex-row-reverse' : ''}`}>
+            <div className={`flex items-center gap-2 justify-center ${isArabic ? 'md:flex-row-reverse md:justify-end' : 'md:justify-start'}`}>
               <MapPin size={16} className="text-gold" />
-              <span className={`text-sm ${isArabic ? 'font-arabic' : ''}`}>
+              <span className={`text-sm ${isArabic ? 'font-arabic md:text-right' : 'md:text-left'}`}>
                 {isArabic ? 'الرياض، المملكة العربية السعودية' : 'Riyadh, Saudi Arabia'}
               </span>
             </div>
@@ -105,14 +105,14 @@ const Footer: React.FC<FooterProps> = ({ language }) => {
                 href="https://wa.me/966566667197"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-3 text-primary-foreground/80 hover:text-gold transition-colors duration-300"
+                className={`flex items-center justify-center gap-3 text-primary-foreground/80 hover:text-gold transition-colors duration-300 ${isArabic ? 'md:flex-row-reverse md:justify-end' : 'md:justify-start'}`}
               >
                 <MessageCircle size={16} />
                 <span dir="ltr" style={{ direction: 'ltr', textAlign: 'left' }}>+966 566667197</span>
               </a>
               <a
                 href="mailto:sleekcare.sa@gmail.com"
-                className="flex items-center justify-center gap-3 text-primary-foreground/80 hover:text-gold transition-colors duration-300"
+                className={`flex items-center justify-center gap-3 text-primary-foreground/80 hover:text-gold transition-colors duration-300 ${isArabic ? 'md:flex-row-reverse md:justify-end' : 'md:justify-start'}`}
               >
                 <Mail size={16} />
                 <span dir="ltr" style={{ direction: 'ltr', textAlign: 'left' }}>sleekcare.sa@gmail.com</span>
